@@ -8,7 +8,7 @@
       NHibernate.Driver.SqlClientDriver
     </property>
     <property name="connection.connection_string">
-      Server=MONI-PC\SQLEXPRESS;database=NHibCar;Integrated Security=SSPI;
+      Server=109a8ab0-1a63-47c0-9664-a3600072d587.sqlserver.sequelizer.com;Database=db109a8ab01a6347c09664a3600072d587;User ID=qcymqlkuiljgisth;Password=wxRThBzXNL6jYDBFCx5BWJ3VgEkBwiHb74JDgwwkNjXaDp6Y7XV5WtBVD4MKq6zD;
     </property>
     <property name="dialect">
       NHibernate.Dialect.MsSql2008Dialect

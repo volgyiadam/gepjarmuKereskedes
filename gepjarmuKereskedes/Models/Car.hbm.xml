@@ -10,7 +10,8 @@
     <property name="Vintage" access="property" column="Vintage" type="Int32" />
     <property name="ProductionTime" access="property" column="ProductionTime" type="DateTime" />
     <property name="Condition" access="property" column="Condition" type="String" />
-    <property name="PreviousOwners" access="property" column="PreviousOwners" type="Int32" />
+    <property name="PreviousOwners" access="property" column="PreviousOwners" type="Int32" />    
+    <property name="SiteId" access="property" column="SiteId" type="Int32" />
     
   </class>
 </hibernate-mapping>

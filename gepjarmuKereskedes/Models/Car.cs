@@ -66,7 +66,14 @@ namespace gepjarmuKereskedes.Models
             get { return _PreviousOwners; }
             set { _PreviousOwners = value; }
         }
-        
+
+        private int _SiteId;
+
+        public virtual int SiteId
+        {
+            get { return _SiteId; }
+            set { _SiteId = value; }
+        }
         
         
         
