@@ -51,14 +51,14 @@ namespace gepjarmuKereskedes.Controllers
         {
             using (ISession session = NHibernateSession.OpenSession())
             {
-                Car auto = session.QueryOver<Car>().Where(x => x.Id == id).List().First();
+                Car auto = session.Get<Car>(id);
                 if (auto == null)
                 {
                     return HttpNotFound();
                 }
                 else
                 {
-                    Site telep = session.QueryOver<Site>().Where(x => x.Id == auto.SiteId).List().First();
+                    Site telep = session.Get<Site>(auto.SiteId);
                     CarView av = new CarView(auto, telep);
                     return View(av);
                 }
@@ -89,11 +89,11 @@ namespace gepjarmuKereskedes.Controllers
             {
                 using (ITransaction trans = session.BeginTransaction())
                 {
-                    if (ModelState.IsValid && (session.QueryOver<Site>().Where(x => x.Id == telep).List().First().ReservedCount < session.QueryOver<Site>().Where(x => x.Id == telep).List().First().ParkSlotCount))
+                    if (ModelState.IsValid && (session.Get<Site>(telep).ReservedCount < session.Get<Site>(telep).ParkSlotCount))
                     {
                         try
                         {
-                            session.QueryOver<Site>().Where(x => x.Id == telep).List().First().ReservedCount += 1;
+                            session.Get<Site>(telep).ReservedCount += 1;
                             auto.SiteId = telep;
                             session.Save(auto);
                             trans.Commit();
@@ -119,7 +119,7 @@ namespace gepjarmuKereskedes.Controllers
         {
             using (ISession session = NHibernateSession.OpenSession())
             {
-                Car auto = session.QueryOver<Car>().Where(x => x.Id == id).List().First();
+                Car auto = session.Get<Car>( id);
 
                 if (auto == null)
                 {
@@ -145,13 +145,13 @@ namespace gepjarmuKereskedes.Controllers
             {
                 using (ITransaction trans = session.BeginTransaction())
                 {
-                    if (ModelState.IsValid && (session.QueryOver<Site>().Where(x => x.Id == telephely).List().First().ReservedCount < session.QueryOver<Site>().Where(x => x.Id == telephely).List().First().ParkSlotCount))
+                    if (ModelState.IsValid && (session.Get<Site>(telephely).ReservedCount < session.Get<Site>(telephely).ParkSlotCount))
                     {
                         try
                         {
                             Car car = session.Get<Car>(auto.Id);
-                            session.QueryOver<Site>().Where(x => x.Id == car.SiteId).List().First().ReservedCount -= 1;
-                            session.QueryOver<Site>().Where(x => x.Id == telephely).List().First().ReservedCount += 1;
+                            session.Get<Site>(car.SiteId).ReservedCount -= 1;
+                            session.Get<Site>(telephely).ReservedCount += 1;
                             car.Brand = auto.Brand;
                             car.Condition = auto.Condition;
                             car.PreviousOwners = auto.PreviousOwners;
@@ -182,7 +182,7 @@ namespace gepjarmuKereskedes.Controllers
         {
             using (ISession session = NHibernateSession.OpenSession())
             {
-                Car auto = session.QueryOver<Car>().Where(x => x.Id == id).List().First();
+                Car auto = session.Get<Car>( id);
                 if (auto == null)
                 {
                     return HttpNotFound();
@@ -203,8 +203,8 @@ namespace gepjarmuKereskedes.Controllers
             {
                 using (ITransaction trans = session.BeginTransaction())
                 {
-                    Car auto = session.QueryOver<Car>().Where(x => x.Id == id).List().First();
-                    session.QueryOver<Site>().Where(x => x.Id == auto.SiteId).List().First().ReservedCount -= 1;
+                    Car auto = session.Get<Car>(id);
+                    session.Get<Site>(auto.SiteId).ReservedCount -= 1;
 
                     session.Delete(auto);
                     trans.Commit();
