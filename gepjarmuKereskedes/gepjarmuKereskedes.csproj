@@ -188,18 +188,19 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\Car.cs" />
+    <Compile Include="Infrastructure\ICarRepository.cs" />
+    <Compile Include="Infrastructure\ISiteRepository.cs" />
+    <Compile Include="Infrastructure\Site.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\CarView.cs" />
-    <Compile Include="Models\NHibernateSession.cs" />
-    <Compile Include="Models\Site.cs" />
+    <Compile Include="Models\SiteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -266,9 +267,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
-    <Content Include="Models\Car.hbm.xml" />
-    <Content Include="Models\hibernate.cfg.xml" />
-    <Content Include="Models\Site.hbm.xml" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />

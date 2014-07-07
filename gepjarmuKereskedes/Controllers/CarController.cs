@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using gepjarmuKereskedes.Models;
 using NHibernate;
+using gepjarmuKereskedes.Infrastructure;
 
 namespace gepjarmuKereskedes.Controllers
 {

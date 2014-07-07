@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "gepjarmuKereskedes", "gepjarmuKereskedes\gepjarmuKereskedes.csproj", "{AE7B6080-8A02-47DA-9F60-DC7E2A56B230}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GepjarmuKereskedes.DA", "GepjarmuKereskedes.DA\GepjarmuKereskedes.DA.csproj", "{77897839-C0EB-41C0-9CF9-D03DD09A0CC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AE7B6080-8A02-47DA-9F60-DC7E2A56B230}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE7B6080-8A02-47DA-9F60-DC7E2A56B230}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE7B6080-8A02-47DA-9F60-DC7E2A56B230}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77897839-C0EB-41C0-9CF9-D03DD09A0CC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77897839-C0EB-41C0-9CF9-D03DD09A0CC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77897839-C0EB-41C0-9CF9-D03DD09A0CC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77897839-C0EB-41C0-9CF9-D03DD09A0CC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

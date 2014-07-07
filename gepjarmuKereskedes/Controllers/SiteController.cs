@@ -1,4 +1,5 @@
-﻿using gepjarmuKereskedes.Models;
+﻿using gepjarmuKereskedes.Infrastructure;
+using gepjarmuKereskedes.Models;
 using NHibernate;
 using System;
 using System.Collections.Generic;
