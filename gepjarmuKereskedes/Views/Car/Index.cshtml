@@ -54,7 +54,8 @@
             <td>
                 @Html.ActionLink("Szerkesztés", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Részletek", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Törlés", "Delete", new { id = item.Id })
+                <a href="#" onclick="deleteCar('@item.Id')">Törlés</a>
+                @*@Html.ActionLink("Törlés", "Delete", new { id = item.Id }, new {  })*@
             </td>
         </tr>
         <tr>
@@ -63,3 +64,18 @@
     }
 
 </table>
+<script type="text/javascript">
+
+    function deleteCar(id)
+    {
+        if (confirm("Valóban törölni szerepné az autót?"))
+        {
+            $.ajax({
+                url: '@Url.Action("DeleteConfirmed")',
+                type: "POST",
+                data: {id: id},
+            });
+        }
+    }
+
+</script>
